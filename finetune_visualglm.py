@@ -171,7 +171,7 @@ if __name__ == '__main__':
     args = argparse.Namespace(**vars(args), **vars(known))
 
     model_type = 'visualglm-6b'
-    model, args = FineTuneVisualGLMModel.from_pretrained(model_type, args)
+    model, args = FineTuneVisualGLMModel.from_pretrained(model_type, args).quantize(4).half().cuda()
     tokenizer = get_tokenizer(args)
     label_pad_token_id = -100 if args.ignore_pad_token_for_loss else tokenizer.pad_token_id
     def data_collator(examples):
