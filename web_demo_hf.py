@@ -132,7 +132,7 @@ def main(args):
 
         print(gr.__version__)
 
-        demo.queue().launch(share=args.share, inbrowser=True, server_name='0.0.0.0', server_port=8080)
+        demo.queue().launch(share=True, inbrowser=True, server_name='0.0.0.0', server_port=9001)
 
 if __name__ == '__main__':
     import argparse
